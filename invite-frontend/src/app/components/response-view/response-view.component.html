@@ -1,0 +1,23 @@
+<div class="container pt-5 text-center">
+    <h1 class="pt-5 pb-4">Welcome to <span class="text-light">invite.me</span>!</h1>
+    <small class="m-1">You have been invited to</small>
+    <h2 class="m-2">{{eventDetails?.eventName}}</h2>
+    <small class="m-1">It will be held at</small>
+    <h4>{{eventDetails?.location}}</h4>
+    <h3>{{eventDetails?.dateTime}}</h3>
+
+    <small class="d-block pt-4 pb-2"><label for="response">Your Response</label></small>
+    <form  [formGroup]="formGroup">
+        <select name="response"
+                id="response"
+                formControlName="response"
+                class="form-control w-35 ml-auto mr-auto text-center">
+            <option value="IS_GOING">I'm going</option>
+            <option value="CANT_GO">I can't go</option>
+            <option value="NOT_SURE">I'm not sure</option>
+        </select>
+        <button class="mr-auto ml-auto mt-5 d-block" (click)="sendResponse()">
+            SEND RESPONSE
+        </button>
+    </form>
+</div>

@@ -1,0 +1,34 @@
+<div class="container text-center pt-4">
+    <h1 class="pt-5 pb-4">Welcome to <span class="text-light">invite.me</span>!</h1>
+    <p class="pt-2 pb-0 mb-0">Your Event:</p>
+    <h1 class="mb-0">
+        {{eventDetails?.eventName}}
+    </h1>
+    <small>@{{eventDetails?.location}}<br>
+        {{eventDetails?.dateTime}}</small><br>
+
+
+    <h4 class="d-block pt-3">Guest Responses</h4>
+    <table class="table-dark table-striped table w-75 text-center ml-auto mr-auto mt-2 small" aria-describedby="guest-table">
+        <thead>
+            <tr>
+                <th class="font-weight-light" scope="col">Name</th>
+                <th class="font-weight-light" scope="col">Email</th>
+                <th class="font-weight-light" scope="col">Response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let guest of eventDetails?.guestList">
+                <td class="small">
+                    {{guest.name}}
+                </td>
+                <td class="small">
+                    {{guest.mail}}
+                </td>
+                <td class="small">
+                    {{guest.response}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
